@@ -1,0 +1,43 @@
+# GET all todos
+curl -X GET http://localhost:8081/api/todos
+
+# GET all todos with filters
+curl -X GET "http://localhost:8081/api/todos?completed=false&priority=high&status=pending"
+
+# GET single todo
+curl -X GET http://localhost:8081/api/todos/<id>
+
+# POST create todo
+curl -X POST http://localhost:8081/api/todos \
+  -H "Content-Type: application/json" \
+  -d '{
+    "title": "Buy groceries",
+    "description": "Milk, eggs, bread",
+    "completed": false,
+    "priority": "high",
+    "status": "pending",
+    "dueDate": "2025-12-31T00:00:00.000Z"
+  }'
+
+# PUT full update
+curl -X PUT http://localhost:8081/api/todos/<id> \
+  -H "Content-Type: application/json" \
+  -d '{
+    "title": "Buy groceries updated",
+    "description": "Milk, eggs, bread, butter",
+    "completed": false,
+    "priority": "medium",
+    "status": "in-progress",
+    "dueDate": "2025-12-31T00:00:00.000Z"
+  }'
+
+# PATCH partial update
+curl -X PATCH http://localhost:8081/api/todos/<id> \
+  -H "Content-Type: application/json" \
+  -d '{
+    "completed": true,
+    "status": "done"
+  }'
+
+# DELETE todo
+curl -X DELETE http://localhost:8081/api/todos/<id>
