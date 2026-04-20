@@ -11,11 +11,18 @@ const router = express.Router();
 // PATCH  http://localhost:8081/api/todos/:id   — partially update a todo
 // DELETE http://localhost:8081/api/todos/:id   — delete a todo
 
-router.get('/',        todoController.getAllTodos);
-router.post('/',       todoController.createTodo);
-router.get('/:id',     todoController.getTodoById);
-router.put('/:id',     todoController.updateTodo);
-router.patch('/:id',   todoController.patchTodo);
-router.delete('/:id',  todoController.deleteTodo);
+// GET getAllTodos
+router.get('/', todoController.getAllTodos);
+
+// POST createTodo
+
+// GET getTodoById
+
+// PUT updateTodo
+
+// PATCH patchTodo
+
+// DELETE deleteTodo
+
 
 module.exports = router;
