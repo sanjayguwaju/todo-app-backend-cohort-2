@@ -20,13 +20,9 @@ const todoSchema = new mongoose.Schema(
     },
     priority: {
       type: String,
-      enum: Object.values(PRIORITY),
-      default: PRIORITY.MEDIUM,
     },
     status: {
       type: String,
-      enum: Object.values(STATUS),
-      default: STATUS.PENDING,
     },
     dueDate: {
       type: Date,

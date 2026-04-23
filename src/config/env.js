@@ -1,7 +1,11 @@
-require('dotenv').config();
+const path = require('path'); // Kun folder maa jaanu parne bhanne dekhauxa
+
+require('dotenv').config({
+  path: path.resolve(__dirname, '../../.env')
+}); // .env file ma bhako sabai kura lyayera raakhxa
+
 
 module.exports = {
-  PORT: process.env.PORT || 8081,
-  NODE_ENV: process.env.NODE_ENV || 'development',
-  MONGO_URI: process.env.MONGO_URI || 'mongodb://localhost:27017/todo-app',
-};
+    PORT: process.env.PORT,
+    MONGO_URI: process.env.MONGO_URI,
+}

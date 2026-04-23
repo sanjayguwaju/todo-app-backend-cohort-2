@@ -3,47 +3,10 @@ const todoService = require('../services/todo.service');
 
 exports.getAllTodos = async (req, res) => {
   try {
-
+    const todos = await todoService.getAllTodos(req.query);
+    res.status(200).json({ success: true, count: todos.length, data: todos });
   } catch (err) {
-    
+    res.status(500).json({ success: false, message: 'Server error', error: err.message });
   }
 };
 
-// exports.createTodo = async (req, res) => {
-//   try {
-   
-//   } catch (err) {
-//   }
-// };
-
-// exports.getTodoById = async (req, res) => {
-//   try {
-
-//   } catch (err) {
-
-//   }
-// };
-
-exports.updateTodo = async (req, res) => {
-  try {
-
-  } catch (err) {
-
-  }
-};
-
-exports.patchTodo = async (req, res) => {
-  try {
-
-  } catch (err) {
-
-  }
-};
-
-exports.deleteTodo = async (req, res) => {
-  try {
-
-  } catch (err) {
-
-  }
-};

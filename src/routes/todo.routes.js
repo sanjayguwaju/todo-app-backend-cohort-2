@@ -1,8 +1,10 @@
 // routes/todo.routes.js
 const express = require('express');
+const router = express.Router();
 
 const todoController = require('../controllers/todo.controller');
-const router = express.Router();
+
+// Task List
 
 // GET    http://localhost:8081/api/todos       — fetch all todos (supports ?completed=true, ?priority=high, ?status=pending)
 // POST   http://localhost:8081/api/todos       — create a new todo
